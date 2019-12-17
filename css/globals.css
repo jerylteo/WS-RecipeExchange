@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 10px;
+}
+a, li {
+    list-style-type: none;
+    text-decoration: none;
+}
+h1 {
+    font-size: 7rem;
+    font-family: plantin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h2 {
+    font-size: 3.5rem;
+    font-family: plantin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h3 {
+    font-size: 2.4rem;
+    font-family: plantin, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+a, p, span, input, button, li {
+    font-size: 2rem;
+    font-family: mrs-eaves, serif;
+    font-weight: 400;
+    font-style: normal;
+}
