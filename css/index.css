@@ -1,0 +1,184 @@
+main.container {
+    height: 70vh;
+}
+
+div.hero {
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+    color: white;
+}
+div.hero h1.hero-title {color: #fc2205; margin: 2rem 0 7rem 0;}
+div.hero h1 span.hero-sub {color: white; 
+    font-size: 7rem;
+    font-family: plantin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+div.hero a.hero-btn {
+    background-color: #05fc8dBF;
+    border: 2px solid #05fc8d;
+    color: white;
+}
+
+aside.searchbar {
+    left: 0;
+    right: 0;
+    bottom: 25%;
+    position: absolute;
+    background-color: #dadcdd;
+    width: 60%;
+    height: 7.5rem;
+    margin: auto;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+aside.searchbar form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+aside.searchbar form div:first-child {
+    /* margin-top: 1.75rem; */
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+aside.searchbar form div.search-text input {
+    width: 80%;
+    padding: 0.5rem;
+    background-color: rgba(0,0,0,0.15);
+    border: none;
+}
+aside.searchbar form div.search-btn {
+    height: 100%;
+}
+aside.searchbar form div.search-btn input{
+    background-color: #fc2205;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+/* SECTION */
+section.promotions {
+    background-color: #23292a;
+    padding: 10rem 0;
+}
+section.promotions .container {
+    width: 80%;
+    margin: auto;
+}
+div.p-quote {
+    text-align: center;
+    color: white;
+}
+div.p-quote span {
+    display: block;
+    font-style: italic;
+}
+div.p-quote span#author {
+    margin-top: 2rem;
+    color: #fc2205;
+}
+div.flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10rem 0;
+}
+aside.label {
+    background-color: #af1602;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+}
+aside.label .label-text {
+    font-size: 5rem;
+}
+aside.label .label-circle {
+    transform: rotate(270deg);
+}
+
+div.p-grid, div.l-grid {
+    width: 50%;
+    margin: auto;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5rem;
+}
+div.p-item, div.l-item {
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.p-grid .p-item img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%) saturate(140%);
+}
+.overlay-text {
+    position: absolute;
+    /* top: 0; */
+    /* bottom: 0; */
+}
+.p-grid .overlay-text p {
+    color: white;
+    font-size: 5rem;
+    font-family: plantin, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+/* Latest */
+section.latest {
+    padding-bottom: 10rem;
+    background-color: #23292a;
+    display: flex;
+    justify-content: space-between;
+}
+div.l-grid .l-item img {
+    width: 100%;
+    height: 100%;
+}
+.l-grid .overlay-text p {
+    color: white;
+}
+.l-grid .l-title {
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5rem;
+}
+.l-grid .l-author {
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5rem;
+}
+
+/* NEWSLETTER */
+section.newsletter {
+    background-color: #3b4648;
+    text-align: center;
+    padding: 10rem 0;
+    color: white;
+}
+section.newsletter p {
+    padding: 2rem 0;
+}
+section.newsletter form input[type="email"] {
+    width: 50%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+

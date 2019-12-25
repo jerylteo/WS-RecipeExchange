@@ -33,3 +33,84 @@ a, p, span, input, button, li {
     font-weight: 400;
     font-style: normal;
 }
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: #05fc8d;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    padding: 5rem 0 2rem 0;
+    background-color: black;
+    text-align: center;
+}
+footer p {
+    color: white;
+}
+footer p.nav-brand {
+    color: #fc2205;
+    padding: 1rem 0;
+}
+footer p.nav-brand span {
+    color: white;
+}
+.f-icons {
+    display: flex;
+    justify-content: center;
+}
+.f-nav-menu {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+.f-nav-menu li {
+    padding: 1rem;
+}
+.f-nav-item a {
+    color: white;
+}
+hr {
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.copy {
+    padding: 2rem 0;
+}
+
+main.container {
+    background-image: url("../_resources/_images/Hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 0;
+    color: white;
+    width: 80%;
+    margin: auto;
+}
+header h2.nav-brand {
+    color: #fc2205;
+}
+header h2.nav-brand span {color: white;}
+header ul.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+header ul li.nav-item {
+    padding: 0.5rem;
+    margin: 0 3rem;
+    border-radius: 0.5rem;
+}
+header ul li.nav-item:hover {
+    background-color: rgba(255,255,255,0.5);
+}
+header ul li.nav-item:hover a {
+    color: #fc2205;
+}
+header ul li.nav-item a {color: white;}

@@ -1,0 +1,13 @@
+.recipes {
+    padding: 10rem 0;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+}
+.recipe {
+    padding: 1rem;
+    border: 1px solid black;
+}

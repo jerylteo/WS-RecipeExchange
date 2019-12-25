@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe Exchange - Wss7</title>
+    <link rel="stylesheet" href="https://use.typekit.net/dup7ryo.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/recipes.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h2 class="nav-brand">Recipe <span>Exchange</span></h2>
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">Recipes</a></li>
+                <li class="nav-item"><a href="#">Profile</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+        </header>
+    </main>
+
+    <div id="app">
+        <div class="recipes">
+            <div class="recipe" v-for="rec in recipes">
+                <h3>{{rec.name}}</h3>
+                <p>{{rec.description}}</p>
+                <p>-{{rec.author}}</p>
+                <span>Likes: {{rec.likes}}</span>
+                <button class="edit" @click="edit(rec.id)">Edit</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p class="nav-brand">Recipe <span>Exchange</span></p>
+        <div class="f-icons">
+            <div class="f-icon">
+                <img src="_resources/_icons/icon_gplus.png" alt="Google+">
+            </div>
+            <div class="f-icon">
+                <img src="_resources/_icons/icon_insta.png" alt="Instagram">
+            </div>
+            <div class="f-icon">
+                <img src="_resources/_icons/icon_twit.png" alt="Twitter">
+            </div>
+            <div class="f-icon">
+                <img src="_resources/_icons/icon_ws.png" alt="Whatsapp">
+            </div>
+        </div>
+        <ul class="f-nav-menu">
+            <li class="f-nav-item"><a href="#">Home</a></li>
+            <li class="f-nav-item"><a href="#">Recipes</a></li>
+            <li class="f-nav-item"><a href="#">Profile</a></li>
+            <li class="f-nav-item"><a href="#">Contact Us</a></li>
+        </ul>
+        <p class="f-copy">Copyright &copy; 2019. All Rights Reserved</p>
+        <p class="f-copy">Powered by Worldskills Singapore</p>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
