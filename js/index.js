@@ -6,6 +6,7 @@ new Vue({
             category: '',
             description: '',
             author: '',
+            image: '',
         },
         recipes: null,
         editStatus: false,
@@ -35,8 +36,8 @@ new Vue({
             })
         },
         edit(id) {
-            this.getRecipe(`${GET_RECIPES_ID_URL}${id}`);
             this.editStatus = true;
+            this.getRecipe(`${GET_RECIPES_ID_URL}${id}/edit`);
         },
         update(id) {
             var form = new FormData();

@@ -23,7 +23,8 @@
     </main>
 
     <div id="app">
-        <div class="addForm">
+        <div class="addForm" v-if="!editStatus">
+            <h2>Add New Recipe!</h2>
             <form class="recipeAdd" @submit.prevent>
                 <p>
                     <label>Name: </label>
@@ -41,14 +42,20 @@
                     <label>Author: </label>
                     <input type="text" v-model="recipe.author">
                 </p>
+                <p>
+                    <label>Picture: </label>
+                    <input type="file" v-model="recipe.image">
+                </p>
                 <button @click="addRecipe()">Add New Recipe</button>
             </form>
         </div>
         <div class="recipes">
-            <div class="recipe" v-for="rec in recipes" v-if="!editStatus">
+            <div class="recipe" v-for="rec in recipes">
                 <div class="recipe">
                     <h3>{{rec.name}}</h3>
-                    <p>{{rec.category}}</p>
+                    <!-- <span>{{rec.id}}</span> -->
+                    <p>Category ID: {{rec.category_id}}</p>
+                    <img :src="'/' + rec.image" :alt="rec.name">
                     <p>{{rec.description}}</p>
                     <p>-{{rec.author}}</p>
                     <span>Likes: {{rec.likes}}</span>
@@ -73,6 +80,10 @@
                         <p>
                             <label>Author: </label>
                             <input type="text" v-model="recipe.author">
+                        </p>
+                        <p>
+                            <label>Picture: </label>
+                            <input type="file" v-model="recipe.image">
                         </p>
                         <button @click="update(rec.id)">Save</button>
                     </form>

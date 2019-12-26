@@ -8,6 +8,9 @@
     margin: 2rem;
     border: 1px solid black;
 }
+.addForm h2 {
+    padding: 2rem;
+}
 
 .recipes {
     padding: 10rem 0;
