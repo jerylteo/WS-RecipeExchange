@@ -6,7 +6,7 @@ new Vue({
             category: '',
             description: '',
             author: '',
-            image: '',
+            image: null,
         },
         recipes: null,
         editStatus: false,
@@ -29,6 +29,7 @@ new Vue({
             axios.get(param)
             .then(response=>{
                 this.recipes = response.data;
+                this.recipe = response.data;
                 console.log(this.recipes);
             })
             .catch(error=>{
@@ -45,6 +46,7 @@ new Vue({
             form.append('description', this.recipe.description);
             form.append('category_id', this.recipe.category);
             form.append('author', this.recipe.author);
+            form.append('image', this.recipe.image);
 
             axios.post(`${PUT_RECIPE_URL}${id}`, form)
             .then(response=>{
