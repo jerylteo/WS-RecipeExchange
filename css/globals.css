@@ -27,7 +27,7 @@ h3 {
     font-weight: 400;
     font-style: italic;
 }
-a, p, span, input, button, li {
+a, p, span, input, button, li, label {
     font-size: 2rem;
     font-family: mrs-eaves, serif;
     font-weight: 400;

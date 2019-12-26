@@ -23,13 +23,60 @@
     </main>
 
     <div id="app">
+        <div class="addForm">
+            <form class="recipeAdd" @submit.prevent>
+                <p>
+                    <label>Name: </label>
+                    <input type="text" v-model="recipe.name">
+                </p>
+                <p>
+                    <label>Category: </label>
+                    <input type="text" v-model="recipe.category">
+                </p>
+                <p>
+                    <label>Description: </label>
+                    <input type="text" v-model="recipe.description">
+                </p>
+                <p>
+                    <label>Author: </label>
+                    <input type="text" v-model="recipe.author">
+                </p>
+                <button @click="addRecipe()">Add New Recipe</button>
+            </form>
+        </div>
         <div class="recipes">
-            <div class="recipe" v-for="rec in recipes">
-                <h3>{{rec.name}}</h3>
-                <p>{{rec.description}}</p>
-                <p>-{{rec.author}}</p>
-                <span>Likes: {{rec.likes}}</span>
-                <button class="edit" @click="edit(rec.id)">Edit</button>
+            <div class="recipe" v-for="rec in recipes" v-if="!editStatus">
+                <div class="recipe">
+                    <h3>{{rec.name}}</h3>
+                    <p>{{rec.category}}</p>
+                    <p>{{rec.description}}</p>
+                    <p>-{{rec.author}}</p>
+                    <span>Likes: {{rec.likes}}</span>
+                    <button class="edit" @click="edit(rec.id)" v-if="!editStatus">Admin</button>
+                    <button class="remove" @click="removeRecipe(rec.id)" v-if="editStatus">Delete Recipe</button>
+                </div>
+
+                <div class="recipe" v-if="editStatus">
+                    <form class="recipeEdit" @submit.prevent>
+                        <p>
+                            <label>Name: </label>
+                            <input type="text" v-model="recipe.name">
+                        </p>
+                        <p>
+                            <label>Category: </label>
+                            <input type="text" v-model="recipe.category">
+                        </p>
+                        <p>
+                            <label>Description: </label>
+                            <input type="text" v-model="recipe.description">
+                        </p>
+                        <p>
+                            <label>Author: </label>
+                            <input type="text" v-model="recipe.author">
+                        </p>
+                        <button @click="update(rec.id)">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
