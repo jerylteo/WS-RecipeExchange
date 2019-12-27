@@ -6,10 +6,11 @@ new Vue({
             category: '',
             description: '',
             author: '',
-            image: '',
+            image: null,
         },
         recipes: null,
         editStatus: false,
+        imgsrc: GET_IMAGE_URL,
     },
     methods: {
         initialise() {
@@ -29,7 +30,10 @@ new Vue({
             axios.get(param)
             .then(response=>{
                 this.recipes = response.data;
-                console.log(this.recipes);
+                this.recipe.name = response.data[0].name;
+                this.recipe.category = response.data[0].category_id;
+                this.recipe.description = response.data[0].description;
+                this.recipe.author = response.data[0].author;
             })
             .catch(error=>{
                 console.log(error);
@@ -45,6 +49,7 @@ new Vue({
             form.append('description', this.recipe.description);
             form.append('category_id', this.recipe.category);
             form.append('author', this.recipe.author);
+            form.append('image', this.recipe.image);
 
             axios.post(`${PUT_RECIPE_URL}${id}`, form)
             .then(response=>{
@@ -63,8 +68,9 @@ new Vue({
             form.append('description', this.recipe.description);
             form.append('category_id', this.recipe.category);
             form.append('author', this.recipe.author);
+            form.append('image', this.recipe.image);
 
-            axios.post(`${ADD_RECIPE_URL}`, form)
+            axios.post(ADD_RECIPE_URL, form)
             .then(response=>{
                 console.log(response.data);
                 alert("Added Successfully");
@@ -82,6 +88,7 @@ new Vue({
                 .then(response=>{
                     console.log(response.data);
                     alert("Delete Successful");
+                    this.editStatus = false;
                     this.initialise();
                 })
                 .catch(error=>{

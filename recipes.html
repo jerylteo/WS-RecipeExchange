@@ -23,6 +23,9 @@
     </main>
 
     <div id="app">
+        <div class="breadcrumb">
+            <a href="#"><button>Recipes</button></a>
+        </div>
         <div class="addForm" v-if="!editStatus">
             <h2>Add New Recipe!</h2>
             <form class="recipeAdd" @submit.prevent>
@@ -55,7 +58,7 @@
                     <h3>{{rec.name}}</h3>
                     <!-- <span>{{rec.id}}</span> -->
                     <p>Category ID: {{rec.category_id}}</p>
-                    <img :src="'/' + rec.image" :alt="rec.name">
+                    <img :src="imgsrc + rec.image" :alt="rec.name">
                     <p>{{rec.description}}</p>
                     <p>-{{rec.author}}</p>
                     <span>Likes: {{rec.likes}}</span>
