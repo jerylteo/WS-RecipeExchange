@@ -62,7 +62,11 @@ new Vue({
                 console.log(error);
             })
         },
+        onImageChange(e) {
+            this.recipe.image = e.target.files[0];
+        },
         addRecipe() {
+            console.log(this.recipe.image);
             var form = new FormData();
             form.append('name', this.recipe.name);
             form.append('description', this.recipe.description);

@@ -47,7 +47,7 @@
                 </p>
                 <p>
                     <label>Picture: </label>
-                    <input type="file" v-model="recipe.image">
+                    <input type="file" @change="onImageChange">
                 </p>
                 <button @click="addRecipe()">Add New Recipe</button>
             </form>
@@ -86,7 +86,7 @@
                         </p>
                         <p>
                             <label>Picture: </label>
-                            <input type="file" v-model="recipe.image">
+                            <input type="file" @change="onImageChange($event)">
                         </p>
                         <button @click="update(rec.id)">Save</button>
                     </form>
