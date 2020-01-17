@@ -99,8 +99,11 @@ aside.label {
 aside.label .label-text {
     font-size: 5rem;
 }
-aside.label .label-circle {
+aside.label.p-label .label-circle {
     transform: rotate(270deg);
+}
+aside.label.l-label .label-circle {
+    transform: rotate(90deg);
 }
 
 div.p-grid, div.l-grid {
