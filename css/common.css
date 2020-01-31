@@ -86,7 +86,6 @@ cite {
     cursor: pointer;
 }
 .btn-main {
-    margin-left: 2rem;
     color: #f8f9fa;
     background-color: #28a745;
     border-color: #28a745;
@@ -95,6 +94,26 @@ cite {
     color: #f8f9fa;
     background-color: #218838;
     border-color: #1e7e34;
+}
+.btn-reset {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-reset:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
 }
 form input, form select {
     display: block;
@@ -133,3 +152,62 @@ form input::placeholder {
     content: "\2014\00A0";
 }
   
+.breadcrumb {
+    display: flex;
+    flex-wrap: flex;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+.breadcrumb-item {color: #6c757d;}
+.breadcrumb-item + .breadcrumb-item::before {padding-left: 0.5rem;}
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: "/";
+}
+.breadcrumb-item + .breadcrumb-item:hover{text-decoration: underline;}
+
+.footer {
+    padding: 5rem 0 2.5rem 0;
+    background-color: #373440;
+    color: #f8f9fa;
+    text-align: center;
+}
+.footer a {
+    color: rgba(255, 255, 255, 0.75);
+}
+.footer a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.footer article.footer-social-media ul {
+    display: flex;
+    justify-content: center;
+}
+.footer ul li {
+    padding: 1rem;
+}
+.footer article.footer-nav ul {
+    display: flex;
+    justify-content: center;
+}
+.footer hr {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem auto;
+}
+.footer section.copyright p {
+    color: #6c757d !important;
+    font-size: 1.5rem;
+}
+.hero-logo h1 {color: #FC2205;}
+.default {
+    color: #f8f9fa;
+    font-size: 7rem;
+}
+
+p.category {
+    text-transform: uppercase;
+}

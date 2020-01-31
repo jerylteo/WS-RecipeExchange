@@ -1,6 +1,15 @@
-new Vue({
+const mainVue = new Vue({
     el: '#app',
     data: {
+        // router,
+        user: {
+            loggedIn: false,
+            id: null,
+            username: null,
+            password: null,
+            email: null,
+            role: null,
+        },
         recipe: {
             name: '',
             category: '',
@@ -8,13 +17,42 @@ new Vue({
             author: '',
             image: null,
         },
+        categories: null,
+        search: {
+            selCat: null,
+            selText: null,
+        },
         recipes: null,
         editStatus: false,
+        editId: '',
+        addStatus: false,
         imgsrc: GET_IMAGE_URL,
+        addText: 'ADD NEW RECIPE',
+    },
+    watch: {
+        addStatus: function(newVal) {
+            newVal ? this.addText="CANCEL" : this.addText="ADD NEW RECIPE";
+            console.log(this.addStatus);
+        }
     },
     methods: {
         initialise() {
             this.getAllRecipes();
+            this.getUserDetails();
+            this.getCategories();
+        },
+        getCategories() {
+            axios.get(GET_CATEGORIES_URL)
+            .then(response=> {
+                this.categories = response.data;
+                console.log(this.categories);
+            })
+        },
+        getUserDetails() {
+            var details = JSON.parse(sessionStorage.getItem('user'));
+            if (details)
+                this.user = details;
+
         },
         getAllRecipes() {
             axios.get(GET_RECIPES_URL)
@@ -39,11 +77,8 @@ new Vue({
                 console.log(error);
             })
         },
-        edit(id) {
-            this.editStatus = true;
-            this.getRecipe(`${GET_RECIPES_ID_URL}${id}/edit`);
-        },
-        update(id) {
+        update() {
+            var id = this.editId;
             var form = new FormData();
             form.append('name', this.recipe.name);
             form.append('description', this.recipe.description);
@@ -99,6 +134,19 @@ new Vue({
                     console.log(error);
                 })
             }
+        },
+        editRecipe(recipe) {
+            console.log(recipe);
+        },
+        viewRecipe(rec) {
+            console.log(rec);
+            var temp = sessionStorage.getItem('rec', JSON.stringify(rec));
+            if (temp) {
+                sessionStorage.removeItem('rec');
+            }
+            
+            sessionStorage.setItem('rec', JSON.stringify(rec));
+            window.location.href = "./recipe.html";
         }
     },
     mounted() {

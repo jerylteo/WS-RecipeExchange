@@ -1,0 +1,24 @@
+.editGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+}
+div.meta .buttons {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.formgroup input {
+    width: 100%;
+}
+div.recipe form.recipeEdit .formgroup label {
+    width: 15rem;
+}
+div.recipe .likes {
+    border: 1px solid rgba(0,0,0,0.04);
+}
+div.recipe .likes .likeInfo {
+    display: flex;
+    margin-right: 2.5rem;
+    align-items: center;
+}

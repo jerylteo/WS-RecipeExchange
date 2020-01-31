@@ -1,39 +1,111 @@
-.addForm {
-    width: 80%;
-    margin: 10rem auto 0 auto;
-    border: 1px solid black;
+header.nav {
+    position: relative;
+    background-color: #343a40 !important;
 }
-.addForm form.recipeAdd {
-    padding: 2rem;
-    margin: 2rem;
-    border: 1px solid black;
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
 }
-.addForm h2 {
-    padding: 2rem;
-}
-
-.recipes {
-    padding: 10rem 0;
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 5rem;
-}
-.recipe {
-    padding: 2rem;
-    border: 1px solid black;
-}
-.recipe form.recipeEdit {
-    text-align: left;
-}
-form label {
+.navbar-brand {
     display: inline-block;
-    width: 20rem;
+    padding: 0.3125rem 0;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+.navbar-nav {
+    display: flex;
+}
+.navbar-nav .nav-link {
+    padding: 0.5rem 2.5rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 1);
 }
 
-.breadcrumb {
+
+div.recipesCon {margin: 5rem 0;}
+
+div.addForm {
+    margin: 5rem 0;
+}
+
+div.recipes {
+    margin: 5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10rem 20rem;
+    justify-content: center;
+}
+div.recipe {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+    padding-bottom: 2rem;
+}
+div.recipe:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+div.recipe h3 {
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+}
+div.recipe img {
+    width: 100%;
+    object-fit: cover;
+}
+div.recipe .meta {
     width: 80%;
     margin: auto;
+}
+div.recipe p.desc {
+    text-align: center;
+}
+div.recipe p.category {
+    margin-top: 1rem;
+    text-align: center;
+}
+div.recipe p.author {
+    margin-top: 1rem;
+    text-align: right;
+    color: #6c757d;
+}
+div.recipe p.author::before {
+    content: "\2014\00A0";
+}
+div.recipe .likes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 15rem;
+    margin-left: auto;
+}
+div.recipe .likes {
+    display: flex;
+    align-items: center;
+}
+div.recipe .likes img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    margin-right: 0.5rem;
+}
+
+div.recipe form.recipeEdit {
+    padding: 2rem;
+}
+div.addForm .formgroup, div.recipe form.recipeEdit .formgroup {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+div.addForm .formgroup label {
+    width: 12.5rem;
+}
+div.recipe form.recipeEdit button.returnBtn {
+    margin-left: 2rem;
+}
+button.returnBtn a {
+    color: #343a40 !important;
 }

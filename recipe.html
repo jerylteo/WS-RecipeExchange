@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/dup7ryo.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/recipes.css">
+    <link rel="stylesheet" href="css/recipe.css">
 </head>
 <body>
     <header class="nav" id="userVue">
@@ -34,7 +35,7 @@
         <div class="breadcrumb">
             <div class="container">
                 <a class="breadcrumb-item" href="./index.html">Home</a> 
-                <a class="breadcrumb-item" href="#">Recipes</a>
+                <a class="breadcrumb-item" href="#">Recipe</a>
             </div>
         </div>
     </header>
@@ -42,57 +43,10 @@
     <main class="container">
     <div id="app">
         
-        <div class="recipesCon">
+        <div class="recipesCon recipe">
 
-            <h1>All Recipes</h1>
-            <div class="addForm" v-if="addStatus">
-                <h2>Add New Recipe!</h2>
-                <form class="recipeAdd" @submit.prevent enctype="multipart/form-data">
-                    <div class="formgroup">
-                        <label>Name: </label>
-                        <input type="text" v-model="recipe.name">
-                    </div>
-                    <div class="formgroup">
-                        <label>Category: </label>
-                        <input type="text" v-model="recipe.category">
-                    </div>
-                    <div class="formgroup">
-                        <label>Description: </label>
-                        <input type="text" v-model="recipe.description">
-                    </div>
-                    <div class="formgroup">
-                        <label>Author: </label>
-                        <input type="text" v-model="recipe.author">
-                    </div>
-                    <div class="formgroup">
-                        <label>Picture: </label>
-                        <input type="file" @change="onImageChange">
-                    </div>
-                    <button class="btn btn-main" @click="addRecipe()" v-if="user.loggedIn" >Add New Recipe</button>
-                </form>
-            </div>
-            <button class="btn btn-main newBtn" v-if='user.loggedIn' @click="addStatus=!addStatus">{{addText}}</button>
-            
-            <div class="recipes">
-                <div class="recipe" v-for="rec in recipes">
-                    <article>
-                        <h3>{{rec.name}}</h3>
-                        <img :src="GET_IMAGE_URL + rec.image" :alt="rec.name">
-                        <div class="meta">
-                            <p class="desc">{{rec.description}}</p>
-                            <p class="category">Category: {{rec.category}}</p>
-                            <p class="author">{{rec.author}}</p>
-                            <div class="likes">
-                                <img src="./_resources/_icons/like.png" alt="heart">
-                                <span>{{rec.likes}}</span>
-                            </div>
-                            <button class="btn btn-main" @click="viewRecipe(rec)">View Recipe</button>
-                        </div>
-                    </article>
-                </div>
+            <rec-detail-comp></rec-detail-comp>
 
-                
-            </div>
         </div>
     </div>
     </main>
@@ -147,7 +101,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.1.3/vue-router.min.js"></script>
     <script src="js/const.js"></script>
 
-    <script src="js/recipeDetailComponent.js"></script>
+    <!-- <script src="js/recipeDetailComponent.js"></script> -->
+    <script src="js/recComponent.js"></script>
     <script src="js/routes.js"></script>
 
     <script src="js/index.js"></script>

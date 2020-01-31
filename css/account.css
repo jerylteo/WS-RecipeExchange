@@ -1,0 +1,31 @@
+main.account {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+    margin: 5rem auto;
+}
+.login, .register {
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+
+}
+.login {
+    background-color: rgba(252,34,5,0.01);
+}
+.login {margin-right: 2rem;} .register {margin-left: 2rem;}
+form {
+    margin-top: 5rem;
+}
+form div.formgroup {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+form div.formgroup label {
+    width: 15rem;
+}
+form div.formgroup.buttons {
+    margin-top: 4rem;
+}
+form div.formgroup button.btn.btn-main {margin-right: 2rem;}
