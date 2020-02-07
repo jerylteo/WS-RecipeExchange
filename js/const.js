@@ -6,7 +6,10 @@ const ADD_RECIPE_URL = BASE_URL + "add_recipe";
 const DEL_RECIPE_ID_URL = BASE_URL + "recipes/";
 const GET_IMAGE_URL = "http://localhost/lrv_RecipeExchange/public/images/";
 const PUT_LIKE_RECIPE_ID_URL = BASE_URL + "like_recipe/";
+const PUT_REPORT_RECIPE_ID_URL = BASE_URL + "report_recipe/";
 const GET_CATEGORIES_URL = BASE_URL + "get_categories";
+const GET_SEARCH_CAT_URL = BASE_URL + "search_cat/";
+const GET_SEARCH_REC_URL = BASE_URL + "search_rec/";
 
 // ACCOUNT
 const ACCBASE_URL = BASE_URL + "Account/";

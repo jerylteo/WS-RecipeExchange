@@ -63,14 +63,14 @@
             <form class="container" @submit.prevent>
                 <select name="category" id="category" v-model='search.selCat'>
                     <option value="" selected disabled>CATEGORIES</option>
-                    <option v-for="cat in categories" v-cloak>{{cat.category}}</option>
+                    <option :value="cat.id" v-for="cat in categories" v-cloak>{{cat.category}}</option>
                 </select>
 
                 <article class="searchInput">
                     <input type="text" placeholder="e.g. Mom's Spaghetti" v-model="search.selText">
                 </article>
 
-                <input type="submit" value="SEARCH" class="btn-main">
+                <input type="submit" value="SEARCH" class="btn-main" @click="searchRecipe">
             </form>
         </section>
 
@@ -89,19 +89,19 @@
                 </div>
             </header>
             <article class="grid container">
-                <div class="grid-item">
+                <div class="grid-item" @click="catRedirect(3)">
                     <h2 class="grid-text">Ramen</h2>
                     <div><img src="_resources/_images/_promo/p_ramen.png" alt="Ramen"></div>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item" @click="catRedirect(4)">
                     <h2 class="grid-text">Salad</h2>
                     <div><img src="_resources/_images/_promo/p_salad.png" alt="Salad"></div>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item" @click="catRedirect(2)">
                     <h2 class="grid-text">Omelette</h2>
                     <div><img src="_resources/_images/_promo/p_omelette.png" alt="Omelette"></div>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item" @click="catRedirect(1)">
                     <h2 class="grid-text">Milkshake</h2>
                     <div><img src="_resources/_images/_promo/p_milkshake.png" alt="Milkshake"></div>
                 </div>

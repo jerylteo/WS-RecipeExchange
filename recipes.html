@@ -44,7 +44,7 @@
         
         <div class="recipesCon">
 
-            <h1>All Recipes</h1>
+            <h1 v-cloak>{{searchHeading}}</h1>
             <div class="addForm" v-if="addStatus">
                 <h2>Add New Recipe!</h2>
                 <form class="recipeAdd" @submit.prevent enctype="multipart/form-data">
@@ -54,7 +54,10 @@
                     </div>
                     <div class="formgroup">
                         <label>Category: </label>
-                        <input type="text" v-model="recipe.category">
+                        <select name="category" id="category" v-model='recipe.category'>
+                            <option value="" selected disabled>CATEGORIES</option>
+                            <option :value="cat.id" v-for="cat in categories" v-cloak>{{cat.category}}</option>
+                        </select>
                     </div>
                     <div class="formgroup">
                         <label>Description: </label>
@@ -147,7 +150,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.1.3/vue-router.min.js"></script>
     <script src="js/const.js"></script>
 
-    <script src="js/recipeDetailComponent.js"></script>
     <script src="js/routes.js"></script>
 
     <script src="js/index.js"></script>

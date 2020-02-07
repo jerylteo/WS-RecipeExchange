@@ -144,10 +144,17 @@ section.latest header .background .overlay {
     position: relative;
 }
 .grid-item div {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.16);
+    filter: grayscale(0.25);
+    transition: all 250ms ease-out;
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+.grid-item div:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    filter: grayscale(0) brightness(1.25) contrast(0.9);
 }
 .grid-item div img {
     width: 100%;

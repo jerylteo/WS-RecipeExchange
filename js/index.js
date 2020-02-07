@@ -28,6 +28,7 @@ const mainVue = new Vue({
         addStatus: false,
         imgsrc: GET_IMAGE_URL,
         addText: 'ADD NEW RECIPE',
+        searchHeading: 'All Recipes'
     },
     watch: {
         addStatus: function(newVal) {
@@ -45,7 +46,7 @@ const mainVue = new Vue({
             axios.get(GET_CATEGORIES_URL)
             .then(response=> {
                 this.categories = response.data;
-                console.log(this.categories);
+                // console.log(this.categories);
             })
         },
         getUserDetails() {
@@ -55,14 +56,23 @@ const mainVue = new Vue({
 
         },
         getAllRecipes() {
-            axios.get(GET_RECIPES_URL)
-            .then(response=> {
-                this.recipes = response.data;
+            var searchIndex = sessionStorage.getItem("searchIndex");
+            if(searchIndex == null) {
+                axios.get(GET_RECIPES_URL)
+                .then(response=> {
+                    this.recipes = response.data;
+                    console.log(this.recipes);
+                })
+                .catch(error=>{
+                    console.log(error);
+                })
+            } else {
+                var temp = JSON.parse(searchIndex);
+                this.recipes = temp;
                 console.log(this.recipes);
-            })
-            .catch(error=>{
-                console.log(error);
-            })
+                this.searchHeading = "Searched Recipes";
+                sessionStorage.removeItem("searchIndex");
+            }
         },
         getRecipe(param) {
             axios.get(param)
@@ -147,6 +157,29 @@ const mainVue = new Vue({
             
             sessionStorage.setItem('rec', JSON.stringify(rec));
             window.location.href = "./recipe.html";
+        },
+        searchRecipe() {
+            // console.log(this.search);
+            if (this.search.selCat == null && this.search.selText == null) {
+                alert("Please enter search values");
+            }
+            else {
+                if (this.search.selCat != null && this.search.selText == null) {
+                    axios.get(`${GET_SEARCH_CAT_URL}${this.search.selCat}`)
+                    .then(response=> {
+                        console.log(response.data);
+                        sessionStorage.setItem("searchIndex", JSON.stringify(response.data));
+                        window.location.href = "./recipes.html";
+                    })
+                    .catch(error=> {
+                        console.log(error);
+                    })
+                }
+            }
+        },
+        catRedirect(cat) {
+            this.search.selCat = cat;
+            this.searchRecipe();
         }
     },
     mounted() {

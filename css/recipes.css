@@ -106,6 +106,6 @@ div.addForm .formgroup label {
 div.recipe form.recipeEdit button.returnBtn {
     margin-left: 2rem;
 }
-button.returnBtn a {
+button.returnBtn {
     color: #343a40 !important;
 }
